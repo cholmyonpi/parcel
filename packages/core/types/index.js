@@ -929,7 +929,10 @@ export type TransformerResult = {|
    */
   +sideEffects?: boolean,
   /** The symbols that the asset exports. */
-  +symbols?: $ReadOnlyMap<Symbol, {|local: Symbol, loc: ?SourceLocation|}>,
+  +symbols?: ?$ReadOnlyMap<
+    Symbol,
+    {|local: Symbol, loc: ?SourceLocation, meta?: ?Meta|},
+  >,
   /**
    * When a transformer returns multiple assets, it can give them unique keys to identify them.
    * This can be used to find assets during packaging, or to create dependencies between multiple
